@@ -11,5 +11,7 @@
 
   @for (housingLocation of housingLocationList; track housingLocation) {
     <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
+  }@empty {
+    <h3>Nenhuma propriedade encontrada</h3>
   }
 </section>
