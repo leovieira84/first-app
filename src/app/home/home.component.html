@@ -1,7 +1,7 @@
 <section>
   <form>
-    <input type="text" placeholder="Filter by city" />
-    <button class="primary" type="button">Search</button>
+    <input type="text" placeholder="Filtrar por cidade" #filter/>
+    <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
   </form>
 </section>
 <section class="results">
@@ -9,7 +9,7 @@
   <!-- <app-housing-location *ngFor="let housingLocation of housingLocationList"
   [housingLocation]="housingLocation"></app-housing-location> -->
 
-  @for (housingLocation of housingLocationList; track housingLocation) {
+  @for (housingLocation of filteredLocationList; track housingLocation) {
     <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
   }@empty {
     <h3>Nenhuma propriedade encontrada</h3>
